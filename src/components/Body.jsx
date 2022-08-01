@@ -1,35 +1,31 @@
-import React, { useState } from "react";
+import React from "react";
 import Box from "@mui/material/Box";
-// import Paper from '@mui/material/Paper';
 import Grid from "@mui/material/Grid";
 import ExistingValues from "./ExistingValues";
 import AddValues from "./AddValues";
 
-function Body() {
-  const [students, setStudents] = useState([]);
 
-  function addStudents(newStudent) {
-    console.log(students);
-    setStudents((preStudent) => {
-      return [...preStudent, newStudent];
-    });
-  }
-  function deleteStudent(id){
-        setStudents(preStudent=>{
-            return preStudent.filter((student , index)=>{
-                return index !== id;
-            })
-        })
-}
+function Body(props) {
+  
+
+
+
+  // function deleteStudent(id) {
+  //   axios
+  //     .delete(url + "/" + id)
+  //     .then((response) => console.log(response.data))
+  //     .catch((err) => console.log(err));
+  // }
+
 
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2}>
         <Grid item xs={8}>
-          <ExistingValues students={students} deleteStudent={deleteStudent}/>
+          <ExistingValues isBook={props.isBook}/>
         </Grid>
         <Grid item xs={4}>
-          <AddValues addStudents={addStudents}/>
+          <AddValues isBook={props.isBook}/>
         </Grid>
       </Grid>
     </Box>

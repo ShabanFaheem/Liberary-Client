@@ -1,17 +1,16 @@
 import React from "react";
-import Header from "./Header";
-import Footer from "./Footer";
-import Body from "./Body";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Student from "./Student";
+import Book from "./Book";
 
 function App() {
   return (
-    <div>
-      <Header />
-
-      <Body />
-      <Footer />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/student" element={<Student />} />
+        <Route path="/book" element={<Book />} />
+      </Routes>
+    </Router>
   );
 }
-
 export default App;
