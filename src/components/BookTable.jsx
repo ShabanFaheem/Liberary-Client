@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
-import AspectRatioIcon from '@mui/icons-material/AspectRatio';
+import AspectRatioIcon from "@mui/icons-material/AspectRatio";
+import { Button } from "@mui/material";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 import { TableBody, TableRow, TableCell } from "@mui/material";
 const url = "http://localhost:5000/book";
 
-function StudentTable() {
-    
+function BookTable() {
   const [books, setBooks] = useState([]);
   useEffect(() => {
     axios
@@ -30,7 +31,11 @@ function StudentTable() {
             <TableCell align="left">{book.title}</TableCell>
             <TableCell align="left">{book.author}</TableCell>
             <TableCell align="left">
-              <AspectRatioIcon color="info" />
+              <Link to={"/student/detail/" + book.book_id}>
+                <Button color="inherit">
+                  <AspectRatioIcon color="info" />
+                </Button>
+              </Link>
             </TableCell>
           </TableRow>
         );
@@ -39,4 +44,4 @@ function StudentTable() {
   );
 }
 
-export default StudentTable;
+export default BookTable;

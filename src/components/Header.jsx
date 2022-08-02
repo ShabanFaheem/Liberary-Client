@@ -1,5 +1,4 @@
 import * as React from "react";
-
 import {
   AppBar,
   Toolbar,
@@ -24,7 +23,7 @@ function Header(props) {
             {props.title}
           </Typography>
           <Stack direction="row" spacing={2}>
-            <Link to={"/"+props.content} >
+            <Link to={"/" + props.content}>
               <Button color="inherit">
                 {/* <a href="/student"></a> */}
                 {props.content}

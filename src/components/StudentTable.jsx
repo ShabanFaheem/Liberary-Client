@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import AspectRatioIcon from '@mui/icons-material/AspectRatio';
+import AspectRatioIcon from "@mui/icons-material/AspectRatio";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
-import { TableBody,TableRow, TableCell } from "@mui/material";
+import { TableBody, TableRow, TableCell } from "@mui/material";
 const url = "http://localhost:5000/student";
 
 function StudentTable() {
@@ -29,7 +30,9 @@ function StudentTable() {
             <TableCell align="left">{student.first_name}</TableCell>
             <TableCell align="left">{student.last_name}</TableCell>
             <TableCell align="left">
-              <AspectRatioIcon color="info" />
+              <Link to={"/student/detail/" + student.student_id}>
+                <AspectRatioIcon color="info" />
+              </Link>
             </TableCell>
           </TableRow>
         );

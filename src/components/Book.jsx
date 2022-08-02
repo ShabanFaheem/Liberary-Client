@@ -8,7 +8,6 @@ function Book() {
     <div>
       <Header color="#3D3C42" title="Books" content="Student"/>
       <Body isBook={true}/>
-
       <Footer />
     </div>
   );
